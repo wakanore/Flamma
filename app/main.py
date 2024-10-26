@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from app.students.routers import router as router_users
+from app.students.router import router as router_students
 from starlette.requests import Request
 from starlette.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
@@ -11,11 +12,8 @@ app = FastAPI(title="Flamma-Edu")
 
 
 
-@app.get("/")
-def home_page():
-    return {"message": "Hello World"}
-
 app.include_router(router_users)
+app.include_router(router_students)
 
 
 
