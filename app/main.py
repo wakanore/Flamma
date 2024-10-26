@@ -13,7 +13,7 @@ app = FastAPI(title="Flamma-Edu")
 
 @app.get("/")
 def home_page():
-    return {"message": "Привет, Хабр!"}
+    return {"message": "Hello World"}
 
 app.include_router(router_users)
 
